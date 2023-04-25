@@ -1,0 +1,16 @@
+ticket = int (input ('Введите колличество билетов: '))
+age = list(map(int, input('Введите возраст посетителя(ей) (через пробел): ').split()))
+number1 = 0 # Вводим переменные для параметров возраста
+number2 = 0
+for i in range(len(age)): # Определяем кол-во билетов по возрасту
+       if 18<=age[i]<25:
+         number1=number1+1
+       elif age[i]>=25:
+         number2=number2+1
+
+if ticket>3: # Определяем стоимость с учетом скидки
+    coust=(((number1*990)+(number2*1390))*90)/100
+else: # Определяем стоимость с учетом скидки
+    coust=(number1*990)+(number2*1390)
+
+print ('Сумма к оплате: ', int(coust))
